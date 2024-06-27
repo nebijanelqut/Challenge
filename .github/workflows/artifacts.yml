@@ -16,6 +16,6 @@ jobs:
         env:
           AUTHOR: "Nebijan Elqut"
       - name: Upload $FILE_NAME
-        uses: actions/upload-artifact@v2.0.0
+        uses: actions/upload-artifact@v1.0.0
           
     
