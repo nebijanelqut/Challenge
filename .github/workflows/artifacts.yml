@@ -5,20 +5,15 @@ env:
 
 jobs:
   job-one:
-    name: First Job
     runs-on: ubuntu-latest
 
     steps:
-      - name: First step
+      - name: Check out the code
         uses: actions/checkout@v2
-      - name: "Second step: Create $FILE_NAME"
-        run: echo "This is a test file written by $AUTHOR" > $FILE_NAME
-        env:
-          AUTHOR: "Nebijan Elqut"
       - name: Upload $FILE_NAME
-        uses: actions/upload-artifact@v1.0.0
+        uses: actions/upload-artifact@v2
         with:
-          name: linux
-          path: ./${{ env.FILE_NAME }}
+          name: ${{ env.FILE_NAME }}
+          path: .
           
     
