@@ -1,0 +1,21 @@
+name: Artifacts
+on: [push]
+env:
+  FILE_NAME: result.txt
+
+jobs:
+  job-one:
+    name: First Job
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: First step
+        uses: actions/checkout@v2
+      - name: "Second step: Create $FILE_NAME"
+        run: echo "This is a test file written by $AUTHOR" > $FILE_NAME
+        env:
+          AUTHOR: "Nebijan Elqut"
+      - name: Upload $FILE_NAME
+        uses: actions/upload-artifact@v2.0.0
+          
+    
